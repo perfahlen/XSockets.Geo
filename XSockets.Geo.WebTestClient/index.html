@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="xsockets.geo.css" rel="stylesheet" />
+</head>
+<body onload="new Xsockets.Geo.Map();">
+    <!--<button>Press me</button>-->
+    <div>
+        <div id='myMap' style="border: solid #ffffff 0.5em; border-radius: 1em; max-width: 80vw; min-width: 60vw; height: 90vh; position: relative; float:left;"></div>
+        <div style="margin-right: 3em; margin-top: 2em; max-width: 50vw; min-width: 30vw; height: 40vh; position: relative; float: right;">
+            <div id="drawFence" class="button margin-top">Draw fence</div>
+            <div id="point" class="button margin-top hidden">Test Point</div>
+        </div>
+        <!--<div style="max-width: 50vw; min-width: 30vw; height: 40vh; position: relative; float: right;"></div>-->
+    </div>
+    
+    <script src="scripts/XSockets/xsockets.latest.js"></script>
+    <script src="app/XSockets.geo.fence.js"></script>
+    <!--<script src="fences.js"></script>
+    <script src="jsclient.js"></script>-->
+    <!--<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=release&callback=loadMapScenario' async defer></script>-->
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=release' async defer></script>
+</body>
+</html>

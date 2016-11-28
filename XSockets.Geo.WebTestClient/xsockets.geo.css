@@ -1,0 +1,16 @@
+﻿.button{
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: lawngreen;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+}
+
+.margin-top {
+    margin-top: 2em;
+}
+
+.hidden{
+    display: none;
+}
