@@ -18,3 +18,9 @@ c:\Users\pfahlen\documents\visual studio 2015\Projects\XSockets.Geo\XSockets.Geo
 c:\Users\pfahlen\documents\visual studio 2015\Projects\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Debug\XSockets.Geo.WebTestClient.csprojResolveAssemblyReference.cache
 c:\Users\pfahlen\documents\visual studio 2015\Projects\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Debug\XSockets.Geo.WebTestClient.dll
 c:\Users\pfahlen\documents\visual studio 2015\Projects\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Debug\XSockets.Geo.WebTestClient.pdb
+C:\Users\Uffe\Source\Repos\XSockets.Geo\XSockets.Geo.WebTestClient\bin\XSockets.Geo.WebTestClient.dll.config
+C:\Users\Uffe\Source\Repos\XSockets.Geo\XSockets.Geo.WebTestClient\bin\XSockets.Geo.WebTestClient.dll
+C:\Users\Uffe\Source\Repos\XSockets.Geo\XSockets.Geo.WebTestClient\bin\XSockets.Geo.WebTestClient.pdb
+C:\Users\Uffe\Source\Repos\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Debug\XSockets.Geo.WebTestClient.dll
+C:\Users\Uffe\Source\Repos\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Debug\XSockets.Geo.WebTestClient.pdb
+C:\Users\Uffe\Source\Repos\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Debug\XSockets.Geo.WebTestClient.csprojResolveAssemblyReference.cache

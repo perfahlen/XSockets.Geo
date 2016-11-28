@@ -13,7 +13,7 @@ module Xsockets.Geo {
         }
 
         private openConnection(): void {
-            this.connection = new xsockets.client("ws://localhost:4502", ["GeoBase"]);
+            this.connection = new xsockets.client("ws://localhost:8080", ["GeoBase"]);
             this.controller = this.connection.controller("geobase");
             this.controller.onOpen = () => {
                 this.isOpen = true;

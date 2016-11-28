@@ -10,7 +10,7 @@ var Xsockets;
                 this.attachEvents();
             }
             openConnection() {
-                this.connection = new xsockets.client("ws://localhost:4502", ["GeoBase"]);
+                this.connection = new xsockets.client("ws://localhost:8080", ["GeoBase"]);
                 this.controller = this.connection.controller("geobase");
                 this.controller.onOpen = () => {
                     this.isOpen = true;
@@ -40,26 +40,6 @@ var Xsockets;
             }
         }
         Geo.Connection = Connection;
-    })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
-})(Xsockets || (Xsockets = {}));
-var Xsockets;
-(function (Xsockets) {
-    var Geo;
-    (function (Geo) {
-        class Effects {
-            static blink(elem, callback) {
-                let blinkCounter = 0;
-                let intervalId = setInterval(() => {
-                    blinkCounter += 1;
-                    blinkCounter % 2 === 1 ? elem.style.visibility = "collapse" : elem.style.visibility = "visible";
-                    if (blinkCounter === 8) {
-                        clearInterval(intervalId);
-                        callback();
-                    }
-                }, 150);
-            }
-        }
-        Geo.Effects = Effects;
     })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
 })(Xsockets || (Xsockets = {}));
 var fences = [{
@@ -158,6 +138,26 @@ var Xsockets;
             }
         }
         Geo.Guid = Guid;
+    })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
+})(Xsockets || (Xsockets = {}));
+var Xsockets;
+(function (Xsockets) {
+    var Geo;
+    (function (Geo) {
+        class Effects {
+            static blink(elem, callback) {
+                let blinkCounter = 0;
+                let intervalId = setInterval(() => {
+                    blinkCounter += 1;
+                    blinkCounter % 2 === 1 ? elem.style.visibility = "collapse" : elem.style.visibility = "visible";
+                    if (blinkCounter === 8) {
+                        clearInterval(intervalId);
+                        callback();
+                    }
+                }, 150);
+            }
+        }
+        Geo.Effects = Effects;
     })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
 })(Xsockets || (Xsockets = {}));
 var Xsockets;
