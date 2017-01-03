@@ -2,11 +2,10 @@
 /// <reference path="../ts_definitions/modules/geojson.d.ts" />
 /// <reference path="../ts_definitions/modules/drawingtools.d.ts" />
 /// <reference path="../ts_definitions/modules/spatialmath.d.ts" />
-/// <reference path="effects.ts" />
 /// <reference path="../ts_definitions/xsockets.ts" />
 
 
-module Xsockets.Geo {
+namespace Xsockets.Geo {
 
     export class Map {
 
@@ -20,6 +19,12 @@ module Xsockets.Geo {
         constructor() {
             this.openConnection();
             this.initMap();
+            this.showInstructions();
+        }
+
+        private showInstructions(): void {
+            let instructions = document.querySelector("#instructions") as HTMLDivElement;
+            instructions.style.display = "block";
         }
 
         private openConnection() {
@@ -44,6 +49,9 @@ module Xsockets.Geo {
             this.map = new Microsoft.Maps.Map(mapContainer, {
                 credentials: 'AsXOzwxphj5MnBu0JvpoF7joDb6BdaAa8NHUjUbHj-S9n-_1DzS3vTHfSVmVyXnn',
                 center: new Microsoft.Maps.Location(62.5, 17.2),
+                showZoomButtons: false,
+                showMapTypeSelector: false,
+                showLocateMeButton: false,
                 zoom: 8
             });
             this.addFenceLayer();
@@ -73,44 +81,51 @@ module Xsockets.Geo {
         }
 
         private attachEvents(): void {
-
-            document.querySelector("#drawFence").addEventListener("click", e => {
-
-                this.mapContainer.style.border = "0.5em solid red";
-                this.mapContainer.style.borderRadius = "1em;"
-             
-                //get map
-                // ändra mouse over på kartan till cross
-                //this.mapContainer.style.cursor = "cross";
-                // lyssna på klick event
-                
-                // rita
-                // använda gamla drawing tool?
-                // efter ritat visa nästa symbol som är sätt ut en punkt
-            });
-
+        
             document.querySelector("#myMap").addEventListener("mouseenter", e => {
                 if (!this.attentionOnPolygon) {
-                    this.mapContainer.style.border = "0.5em solid white";
                     let polygonBtn = document.querySelector(".polygon") as HTMLLIElement;
-                    polygonBtn.style.border = "solid green 2px";
                     Xsockets.Geo.Effects.blink(polygonBtn, () => {
                         polygonBtn.style.border = "";
                     });
                     this.attentionOnPolygon = true;
                 }
-                //polygonBtn.onmouseenter = (elem) => {
-                //    (elem.srcElement as HTMLElement).style.border = "";
-                //};
+            });
+
+            document.querySelector("#start").addEventListener("click", e => {
+                let channelNameInput = document.querySelector("#channel-name") as HTMLInputElement;
+                let whitePlate = (document.querySelector("#white-plate") as HTMLDivElement);
+                let instruction = (document.querySelector("#instructions") as HTMLDivElement);
+                let channelNameElement = (document.querySelector("#channel") as HTMLSpanElement);
+                channelNameElement.style.display = "inline";
+                this.hide([whitePlate, instruction]);
+                //if (channelNameInput.value === "") {
+                //    let uid = Xsockets.Geo.Guid.newGuid();
+                //    channelNameInput.value = uid;
+                //    setTimeout(() => {
+                //        channelNameElement.innerHTML = uid;
+                //        this.hide([whitePlate, instruction]);
+                //        this.xsocket.setchannel(uid);
+                //    }, 500);
+                //}
+                //else {
+                //    channelNameElement.innerHTML = channelNameInput.value;
+                //    this.hide([whitePlate, instruction]);
+                //    this.xsocket.setchannel(channelNameInput.value);
+                //}
+            });
+        }
+        
+        private hide(el: Array<HTMLElement>): void {
+            el.forEach(e => {
+                e.style.display = "none";
             });
         }
 
-        private hide(el: HTMLElement): void {
-            el.style.display = "none";
-        }
-
-        private show(el: HTMLElement): void {
-            el.style.removeProperty("display");
+        private show(el: Array<HTMLElement>): void {
+            el.forEach(e => {
+                e.style.removeProperty("display");
+            });
         }
 
         private tryCreatePolygon(polygon: Microsoft.Maps.Polygon): Microsoft.Maps.IPrimitive {
@@ -122,7 +137,7 @@ module Xsockets.Geo {
         }
 
         private showPointButton(): void {
-            let pointElem = document.querySelector("#point") as HTMLDivElement;
+            let pointElem = document.querySelector(".point") as HTMLDivElement;
             pointElem.classList.remove("hidden");
         }
 
@@ -138,7 +153,7 @@ module Xsockets.Geo {
 
             this.xsocket.setFence(geoJsonString);
             this.showPointButton();
-            this.show((document.querySelector(".point") as HTMLElement));
+            this.show([(document.querySelector(".point") as HTMLElement)]);
             let pointBtn = document.querySelector(".point") as HTMLLIElement;
             pointBtn.style.border = "solid green 2px";
             Xsockets.Geo.Effects.blink(pointBtn, () => {
@@ -159,11 +174,11 @@ module Xsockets.Geo {
                 let tools = new Microsoft.Maps.DrawingTools(this.map);
 
                 tools.showDrawingManager((manager) => {
-                    this.hide((document.querySelector(".point") as HTMLLIElement));
-                    this.hide((document.querySelector(".polyline") as HTMLLIElement));
-                    this.hide((document.querySelector(".edit") as HTMLLIElement));
-                    this.hide((document.querySelector(".strokestyle") as HTMLLIElement));
-                    this.hide((document.querySelector(".fillstyle") as HTMLLIElement));
+                    this.hide([(document.querySelector(".point") as HTMLLIElement)]);
+                    this.hide([(document.querySelector(".polyline") as HTMLLIElement)]);
+                    this.hide([(document.querySelector(".edit") as HTMLLIElement)]);
+                    this.hide([(document.querySelector(".strokestyle") as HTMLLIElement)]);
+                    this.hide([(document.querySelector(".fillstyle") as HTMLLIElement)]);
                     Microsoft.Maps.Events.addHandler(manager, 'drawingEnded', (evt) => {
                         let geometry = evt as any;
                         switch (geometry.geometryType) {

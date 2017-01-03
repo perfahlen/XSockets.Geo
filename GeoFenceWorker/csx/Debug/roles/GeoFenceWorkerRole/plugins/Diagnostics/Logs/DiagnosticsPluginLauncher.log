@@ -1,17 +1,17 @@
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Emulator config file set to C:\Users\Uffe\Source\Repos\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] DiagnosticsStoreRootPath set to: C:\Users\Uffe\AppData\Local\dftmp\Resources\d26d9022-109f-4fcd-9ed4-756ca163e4a3
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Loading config file: C:\Users\Uffe\Source\Repos\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Config file to read: C:\Users\Uffe\Source\Repos\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Checking VM Type
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Emulator config file set to C:\Users\Uffe\Source\Repos\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Extension set to Emulator Mode
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Reading XML configuration file
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Bypassing private config decryption
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Stopping the running plugin, if any
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] No DiagnosticsPlugin is running.
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Killing any DiagnosticsPlugin that might remain.
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Killing any MonAgentHost that might remain.
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Diagnostics plugin stopped successfully
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:07:56] Resetting DiagnosticPlugin
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:09:06] DiagnosticsPlugin launched successfully with new configuration
-DiagnosticsPluginLauncher.exe Information: 0 : [2016-11-28 20:09:06] DiagnosticPlugin exited with code 0
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Emulator config file set to C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] DiagnosticsStoreRootPath set to: C:\Users\pfahlen\AppData\Local\dftmp\Resources\3e7890f5-043c-461a-b96a-1a72a8d7d5b5
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Loading config file: C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Config file to read: C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Emulator config file set to C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:29] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:30] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:30] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:30] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:30] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:26:30] Resetting DiagnosticPlugin
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:27:40] DiagnosticsPlugin launched successfully with new configuration
+DiagnosticsPluginLauncher.exe Information: 0 : [2017-01-03 08:27:40] DiagnosticPlugin exited with code 0

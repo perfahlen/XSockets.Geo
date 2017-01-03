@@ -7,21 +7,39 @@
     <link href="xsockets.geo.css" rel="stylesheet" />
 </head>
 <body onload="new Xsockets.Geo.Map();">
-    <!--<button>Press me</button>-->
-    <div>
-        <div id='myMap' style="border: solid #ffffff 0.5em; border-radius: 1em; max-width: 80vw; min-width: 60vw; height: 90vh; position: relative; float:left;"></div>
-        <div style="margin-right: 3em; margin-top: 2em; max-width: 50vw; min-width: 30vw; height: 40vh; position: relative; float: right;">
-            <div id="drawFence" class="button margin-top">Draw fence</div>
-            <div id="point" class="button margin-top hidden">Test Point</div>
-        </div>
-        <!--<div style="max-width: 50vw; min-width: 30vw; height: 40vh; position: relative; float: right;"></div>-->
+
+
+    <div id="myMap">
     </div>
-    
+    <span id="channel"></span>
+    <div id="white-plate"></div>
+    <div id="instructions">
+        <div>
+            <h1 id="instructions-header">
+                Real time geofencing with XSockets and Bing Maps!
+            </h1>
+            <hr />
+            <div id="instructions-content">
+                <p class="instruction-text">
+                    This is an example of capabilities combining real time and GIS. The backend is powered by XSockets and frontend is Bing Maps.
+                </p>
+                <p class="instruction-text">
+                    Press the polygon <span class="polygon-instruction"></span> button at the top left corner to draw your fence.
+                </p>
+                <!--<p>
+                    But first, set a channel name for ur session.<br />
+                    <input type="text" id="channel-name" placeholder="ivory belongs to elephants" />
+                </p>-->
+                <p>
+                    <div id="start" class="button margin-bottom margin-top pull-right">
+                        OK, Got It!
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
     <script src="scripts/XSockets/xsockets.latest.js"></script>
     <script src="app/XSockets.geo.fence.js"></script>
-    <!--<script src="fences.js"></script>
-    <script src="jsclient.js"></script>-->
-    <!--<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=release&callback=loadMapScenario' async defer></script>-->
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=release' async defer></script>
 </body>
 </html>

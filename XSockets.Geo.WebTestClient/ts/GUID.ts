@@ -1,4 +1,4 @@
-﻿module Xsockets.Geo {
+﻿namespace Xsockets.Geo {
     export class Guid {
         static newGuid() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {

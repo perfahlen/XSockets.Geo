@@ -1,7 +1,7 @@
 ﻿/// <reference path="../ts_definitions/xsockets.ts" />
 
 
-module Xsockets.Geo {
+namespace Xsockets.Geo {
     export class Connection {
         private controller: xsockets.Controller;
         private connection: xsockets.client;
@@ -13,8 +13,8 @@ module Xsockets.Geo {
         }
 
         private openConnection(): void {
-            this.connection = new xsockets.client("ws://localhost:8080", ["GeoBase"]);
-            this.controller = this.connection.controller("geobase");
+            this.connection = new xsockets.client("ws://localhost:808", ["fence"]);
+            this.controller = this.connection.controller("fence");
             this.controller.onOpen = () => {
                 this.isOpen = true;
             };
@@ -34,15 +34,24 @@ module Xsockets.Geo {
         public testPoint(id: string, point: string): void{
             this.controller.invoke("withinfence", { id: id, geoJson: point });
         }
+
+        public setchannel(channel: string): void {
+            this.set("setchannel", channel);
+        }
         
         public setFence(fence: string): void {
+            this.set("setfence", fence);
+        }
+
+        private set(invoke: string, value: string): void {
             if (this.isOpen) {
-                this.controller.invoke("setfence", fence);
+                this.controller.invoke(invoke, value);
             } else {
                 setTimeout(() => {
-                    this.setFence(fence);
+                    this.set(invoke, value);
                 }, 50);
             }
         }
+
     }
 }

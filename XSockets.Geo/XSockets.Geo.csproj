@@ -96,7 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeoBaseController.cs" />
+    <Compile Include="FenceController.cs" />
     <Compile Include="InsideResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

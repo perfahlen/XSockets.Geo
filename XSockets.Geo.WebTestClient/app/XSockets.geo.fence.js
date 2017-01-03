@@ -10,8 +10,8 @@ var Xsockets;
                 this.attachEvents();
             }
             openConnection() {
-                this.connection = new xsockets.client("ws://localhost:8080", ["GeoBase"]);
-                this.controller = this.connection.controller("geobase");
+                this.connection = new xsockets.client("ws://localhost:8080", ["fence"]);
+                this.controller = this.connection.controller("fence");
                 this.controller.onOpen = () => {
                     this.isOpen = true;
                 };
@@ -28,18 +28,44 @@ var Xsockets;
             testPoint(id, point) {
                 this.controller.invoke("withinfence", { id: id, geoJson: point });
             }
+            setchannel(channel) {
+                this.set("setchannel", channel);
+            }
             setFence(fence) {
+                this.set("setfence", fence);
+            }
+            set(invoke, value) {
                 if (this.isOpen) {
-                    this.controller.invoke("setfence", fence);
+                    this.controller.invoke(invoke, value);
                 }
                 else {
                     setTimeout(() => {
-                        this.setFence(fence);
+                        this.set(invoke, value);
                     }, 50);
                 }
             }
         }
         Geo.Connection = Connection;
+    })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
+})(Xsockets || (Xsockets = {}));
+var Xsockets;
+(function (Xsockets) {
+    var Geo;
+    (function (Geo) {
+        class Effects {
+            static blink(elem, callback) {
+                let blinkCounter = 0;
+                let intervalId = setInterval(() => {
+                    blinkCounter += 1;
+                    blinkCounter % 2 === 1 ? elem.style.visibility = "collapse" : elem.style.visibility = "visible";
+                    if (blinkCounter === 8) {
+                        clearInterval(intervalId);
+                        callback();
+                    }
+                }, 150);
+            }
+        }
+        Geo.Effects = Effects;
     })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
 })(Xsockets || (Xsockets = {}));
 var fences = [{
@@ -144,31 +170,16 @@ var Xsockets;
 (function (Xsockets) {
     var Geo;
     (function (Geo) {
-        class Effects {
-            static blink(elem, callback) {
-                let blinkCounter = 0;
-                let intervalId = setInterval(() => {
-                    blinkCounter += 1;
-                    blinkCounter % 2 === 1 ? elem.style.visibility = "collapse" : elem.style.visibility = "visible";
-                    if (blinkCounter === 8) {
-                        clearInterval(intervalId);
-                        callback();
-                    }
-                }, 150);
-            }
-        }
-        Geo.Effects = Effects;
-    })(Geo = Xsockets.Geo || (Xsockets.Geo = {}));
-})(Xsockets || (Xsockets = {}));
-var Xsockets;
-(function (Xsockets) {
-    var Geo;
-    (function (Geo) {
         class Map {
             constructor() {
                 this.attentionOnPolygon = false;
                 this.openConnection();
                 this.initMap();
+                this.showInstructions();
+            }
+            showInstructions() {
+                let instructions = document.querySelector("#instructions");
+                instructions.style.display = "block";
             }
             openConnection() {
                 this.xsocket = new Xsockets.Geo.Connection(this);
@@ -187,6 +198,9 @@ var Xsockets;
                 this.map = new Microsoft.Maps.Map(mapContainer, {
                     credentials: 'AsXOzwxphj5MnBu0JvpoF7joDb6BdaAa8NHUjUbHj-S9n-_1DzS3vTHfSVmVyXnn',
                     center: new Microsoft.Maps.Location(62.5, 17.2),
+                    showZoomButtons: false,
+                    showMapTypeSelector: false,
+                    showLocateMeButton: false,
                     zoom: 8
                 });
                 this.addFenceLayer();
@@ -211,27 +225,33 @@ var Xsockets;
                 }
             }
             attachEvents() {
-                document.querySelector("#drawFence").addEventListener("click", e => {
-                    this.mapContainer.style.border = "0.5em solid red";
-                    this.mapContainer.style.borderRadius = "1em;";
-                });
                 document.querySelector("#myMap").addEventListener("mouseenter", e => {
                     if (!this.attentionOnPolygon) {
-                        this.mapContainer.style.border = "0.5em solid white";
                         let polygonBtn = document.querySelector(".polygon");
-                        polygonBtn.style.border = "solid green 2px";
                         Xsockets.Geo.Effects.blink(polygonBtn, () => {
                             polygonBtn.style.border = "";
                         });
                         this.attentionOnPolygon = true;
                     }
                 });
+                document.querySelector("#start").addEventListener("click", e => {
+                    let channelNameInput = document.querySelector("#channel-name");
+                    let whitePlate = document.querySelector("#white-plate");
+                    let instruction = document.querySelector("#instructions");
+                    let channelNameElement = document.querySelector("#channel");
+                    channelNameElement.style.display = "inline";
+                    this.hide([whitePlate, instruction]);
+                });
             }
             hide(el) {
-                el.style.display = "none";
+                el.forEach(e => {
+                    e.style.display = "none";
+                });
             }
             show(el) {
-                el.style.removeProperty("display");
+                el.forEach(e => {
+                    e.style.removeProperty("display");
+                });
             }
             tryCreatePolygon(polygon) {
                 let locations = polygon.getLocations();
@@ -241,7 +261,7 @@ var Xsockets;
                 return polygon;
             }
             showPointButton() {
-                let pointElem = document.querySelector("#point");
+                let pointElem = document.querySelector(".point");
                 pointElem.classList.remove("hidden");
             }
             getGeoJsonString(geometry) {
@@ -254,7 +274,7 @@ var Xsockets;
                 let geoJsonString = this.getGeoJsonString(closedPolygon);
                 this.xsocket.setFence(geoJsonString);
                 this.showPointButton();
-                this.show(document.querySelector(".point"));
+                this.show([document.querySelector(".point")]);
                 let pointBtn = document.querySelector(".point");
                 pointBtn.style.border = "solid green 2px";
                 Xsockets.Geo.Effects.blink(pointBtn, () => {
@@ -271,11 +291,11 @@ var Xsockets;
                 Microsoft.Maps.loadModule('Microsoft.Maps.DrawingTools', () => {
                     let tools = new Microsoft.Maps.DrawingTools(this.map);
                     tools.showDrawingManager((manager) => {
-                        this.hide(document.querySelector(".point"));
-                        this.hide(document.querySelector(".polyline"));
-                        this.hide(document.querySelector(".edit"));
-                        this.hide(document.querySelector(".strokestyle"));
-                        this.hide(document.querySelector(".fillstyle"));
+                        this.hide([document.querySelector(".point")]);
+                        this.hide([document.querySelector(".polyline")]);
+                        this.hide([document.querySelector(".edit")]);
+                        this.hide([document.querySelector(".strokestyle")]);
+                        this.hide([document.querySelector(".fillstyle")]);
                         Microsoft.Maps.Events.addHandler(manager, 'drawingEnded', (evt) => {
                             let geometry = evt;
                             switch (geometry.geometryType) {

@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Geo", "XSockets.Geo\XSockets.Geo.csproj", "{EF3A648A-3351-481E-94F6-EA5ED2FF2077}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.GeoTests", "XSockets.GeoTests\XSockets.GeoTests.csproj", "{DDA46E1D-80D7-4A30-A7A7-145350C6348D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.GeoWorker", "XSockets.GeoWorker\XSockets.GeoWorker.csproj", "{4D4FDB51-4AEB-43B7-84CD-5A84D22088FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSockets.Geo.WebTestClient", "XSockets.Geo.WebTestClient\XSockets.Geo.WebTestClient.csproj", "{95D9E7D9-BF1B-42F6-9EF9-3F8AE9B48AED}"
@@ -35,10 +33,6 @@ Global
 		{EF3A648A-3351-481E-94F6-EA5ED2FF2077}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF3A648A-3351-481E-94F6-EA5ED2FF2077}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF3A648A-3351-481E-94F6-EA5ED2FF2077}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDA46E1D-80D7-4A30-A7A7-145350C6348D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDA46E1D-80D7-4A30-A7A7-145350C6348D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDA46E1D-80D7-4A30-A7A7-145350C6348D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDA46E1D-80D7-4A30-A7A7-145350C6348D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D4FDB51-4AEB-43B7-84CD-5A84D22088FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D4FDB51-4AEB-43B7-84CD-5A84D22088FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D4FDB51-4AEB-43B7-84CD-5A84D22088FB}.Release|Any CPU.ActiveCfg = Release|Any CPU

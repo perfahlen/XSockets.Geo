@@ -88,7 +88,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ts\Connection.ts" />
     <TypeScriptCompile Include="ts\Fence-bout.ts" />
-    <TypeScriptCompile Include="ts\GUI.ts" />
+    <TypeScriptCompile Include="ts\GUID.ts" />
     <TypeScriptCompile Include="ts\Map.ts" />
     <TypeScriptCompile Include="ts\Effects.ts" />
     <TypeScriptCompile Include="ts_definitions\Microsoft.Maps.All.d.ts" />

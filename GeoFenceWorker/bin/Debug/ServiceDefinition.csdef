@@ -20,8 +20,14 @@
     </Endpoints>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Users\Uffe\Source\Repos\XSockets.Geo\GeoFenceWorker\rcf\Debug\GeoFenceWorkerRoleContent\" />
+        <SourceDirectory path="C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\rcf\Debug\GeoFenceWorkerRoleContent\" />
+      </Content>
+      <Content destination=".\">
+        <SourceDirectory path="C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\ecf\GeoFenceWorkerRoleContent\" />
       </Content>
     </Contents>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
   </WorkerRole>
 </ServiceDefinition>

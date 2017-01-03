@@ -11,7 +11,7 @@ namespace XSockets.GeoTests
         public void SendGeoJSON()
         {
             var client = new XSockets.XSocketClient("ws://localhost:4502", "http://localhost", "GeoBase");
-            var geoController = (GeoBaseController) client.Controller("GeoBase");
+            var geoController = (FenceController) client.Controller("GeoBase");
             geoController.OnOpen += (s, e) =>
             {
             };

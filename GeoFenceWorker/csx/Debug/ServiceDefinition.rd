@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeoFenceWorker" generation="1" functional="0" release="0" Id="37451eba-8c1a-456e-9f75-22dc7213f55c" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeoFenceWorker" generation="1" functional="0" release="0" Id="318f5e52-a50d-44e7-afaf-2b1e39238d4d" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="GeoFenceWorkerGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -62,7 +62,7 @@
       </maps>
       <components>
         <groupHascomponents>
-          <role name="GeoFenceWorkerRole" generation="1" functional="0" release="0" software="C:\Users\Uffe\Source\Repos\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaWorkerHost.exe " memIndex="-1" hostingEnvironment="consoleroleadmin" hostingEnvironmentVersion="2">
+          <role name="GeoFenceWorkerRole" generation="1" functional="0" release="0" software="C:\Users\pfahlen\Documents\XSockets.Geo\GeoFenceWorker\csx\Debug\roles\GeoFenceWorkerRole" entryPoint="base\x64\WaHostBootstrapper.exe" parameters="base\x64\WaWorkerHost.exe " memIndex="-1" hostingEnvironment="consoleroleadmin" hostingEnvironmentVersion="2">
             <componentports>
               <inPort name="Endpoint1" protocol="tcp" portRanges="8080" />
             </componentports>
@@ -92,9 +92,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="2389c14e-57eb-486f-9025-40645806902c" ref="Microsoft.RedDog.Contract\ServiceContract\GeoFenceWorkerContract@ServiceDefinition">
+    <implementation Id="b5da5484-7edb-455e-8bdc-00235b615eec" ref="Microsoft.RedDog.Contract\ServiceContract\GeoFenceWorkerContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="01f38c1f-d19c-4682-bc95-184e2be2e834" ref="Microsoft.RedDog.Contract\Interface\GeoFenceWorkerRole:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="733417ae-7fd7-4ac7-9c4d-577473da795f" ref="Microsoft.RedDog.Contract\Interface\GeoFenceWorkerRole:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/GeoFenceWorker/GeoFenceWorkerGroup/GeoFenceWorkerRole:Endpoint1" />
           </inPort>

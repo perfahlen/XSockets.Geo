@@ -1,4 +1,4 @@
-﻿module Xsockets.Geo {
+﻿namespace Xsockets.Geo {
     export class Effects {
         static blink(elem: HTMLElement, callback: Function) : void {
             let blinkCounter = 0;
