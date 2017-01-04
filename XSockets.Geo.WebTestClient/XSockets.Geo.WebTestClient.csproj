@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\XSockets.geo.fence.js" />
+    <Content Include="default.aspx" />
     <Content Include="jsclient.js" />
     <Content Include="scripts\DrawingToolsModule.js" />
     <Content Include="app\XSockets.geo.fence.js.map" />
@@ -76,18 +77,25 @@
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="ts\Config.ts" />
     <TypeScriptCompile Include="ts\Connection.ts" />
-    <TypeScriptCompile Include="ts\Fence-bout.ts" />
     <TypeScriptCompile Include="ts\GUID.ts" />
     <TypeScriptCompile Include="ts\Map.ts" />
     <TypeScriptCompile Include="ts\Effects.ts" />

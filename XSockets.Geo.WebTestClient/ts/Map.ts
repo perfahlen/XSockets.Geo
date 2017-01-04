@@ -14,11 +14,11 @@ namespace Xsockets.Geo {
         private fenceLayer: Microsoft.Maps.Layer;
         private pinLayer: Microsoft.Maps.Layer;
         private attentionOnPolygon = false;
-        private xsocket : Xsockets.Geo.Connection;
+        private xsocket: Xsockets.Geo.Connection;
 
-        constructor() {
+        constructor(key: string, public XSocketsUrl: string) {
             this.openConnection();
-            this.initMap();
+            this.initMap(key);
             this.showInstructions();
         }
 
@@ -33,7 +33,7 @@ namespace Xsockets.Geo {
 
         public colorPin(id: string, inside: boolean): void {
             let primitives = this.pinLayer.getPrimitives();
-            
+
 
             primitives.forEach(p => {
                 let pin = p as Microsoft.Maps.Pushpin;
@@ -41,13 +41,13 @@ namespace Xsockets.Geo {
                     pin.setOptions({ color: inside ? "lawngreen" : "red" });
                 }
             });
-           
+
         }
 
-        private initMap(): void {
+        private initMap(key: string): void {
             let mapContainer = document.querySelector("#myMap") as HTMLDivElement;
             this.map = new Microsoft.Maps.Map(mapContainer, {
-                credentials: 'AsXOzwxphj5MnBu0JvpoF7joDb6BdaAa8NHUjUbHj-S9n-_1DzS3vTHfSVmVyXnn',
+                credentials: key,
                 center: new Microsoft.Maps.Location(62.5, 17.2),
                 showZoomButtons: false,
                 showMapTypeSelector: false,
@@ -81,7 +81,7 @@ namespace Xsockets.Geo {
         }
 
         private attachEvents(): void {
-        
+
             document.querySelector("#myMap").addEventListener("mouseenter", e => {
                 if (!this.attentionOnPolygon) {
                     let polygonBtn = document.querySelector(".polygon") as HTMLLIElement;
@@ -97,25 +97,10 @@ namespace Xsockets.Geo {
                 let whitePlate = (document.querySelector("#white-plate") as HTMLDivElement);
                 let instruction = (document.querySelector("#instructions") as HTMLDivElement);
                 let channelNameElement = (document.querySelector("#channel") as HTMLSpanElement);
-                channelNameElement.style.display = "inline";
                 this.hide([whitePlate, instruction]);
-                //if (channelNameInput.value === "") {
-                //    let uid = Xsockets.Geo.Guid.newGuid();
-                //    channelNameInput.value = uid;
-                //    setTimeout(() => {
-                //        channelNameElement.innerHTML = uid;
-                //        this.hide([whitePlate, instruction]);
-                //        this.xsocket.setchannel(uid);
-                //    }, 500);
-                //}
-                //else {
-                //    channelNameElement.innerHTML = channelNameInput.value;
-                //    this.hide([whitePlate, instruction]);
-                //    this.xsocket.setchannel(channelNameInput.value);
-                //}
             });
         }
-        
+
         private hide(el: Array<HTMLElement>): void {
             el.forEach(e => {
                 e.style.display = "none";
@@ -167,7 +152,7 @@ namespace Xsockets.Geo {
         }
 
         private loadModules(): void {
-            Microsoft.Maps.loadModule('Microsoft.Maps.GeoJson'); 
+            Microsoft.Maps.loadModule('Microsoft.Maps.GeoJson');
             Microsoft.Maps.loadModule('Microsoft.Maps.SpatialMath');
 
             Microsoft.Maps.loadModule('Microsoft.Maps.DrawingTools', () => {

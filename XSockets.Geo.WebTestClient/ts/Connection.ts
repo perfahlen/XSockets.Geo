@@ -13,7 +13,7 @@ namespace Xsockets.Geo {
         }
 
         private openConnection(): void {
-            this.connection = new xsockets.client("ws://localhost:808", ["fence"]);
+            this.connection = new xsockets.client(this.map.XSocketsUrl, ["fence"]);
             this.controller = this.connection.controller("fence");
             this.controller.onOpen = () => {
                 this.isOpen = true;

@@ -73,27 +73,6 @@ hr {
     padding-bottom: 2em;
 }
 
-#channel-name{
-    margin-top: 1em;
-    width: 95%;
-    height: 1.5em;
-    border-radius: 0.5em;
-} 
-
-#channel-name::-webkit-input-placeholder{
-    font-style: italic;
-}
-
-#channel{
-    position: fixed;
-    top: 1em;
-    right: 1em;
-    padding: 1em;
-    background-color: whitesmoke;
-    opacity: 0.5;
-    display: none;
-}
-
 .instruction-text {
     text-indent: 1em;
 }

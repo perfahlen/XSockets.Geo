@@ -19,10 +19,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencie
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureWorkerRole", "AzureWorkerRole", "{6E3B27E8-B00E-4DFB-8E2E-2CAB2F2ECAAC}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "GeoFenceWorker", "GeoFenceWorker\GeoFenceWorker.ccproj", "{6800B260-D7FC-4BE1-AE7F-CDF9EEABE187}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoFenceWorkerRole", "GeoFenceWorkerRole\GeoFenceWorkerRole.csproj", "{45AD24FC-2793-4519-AD94-4F15B57D2996}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,20 +37,8 @@ Global
 		{95D9E7D9-BF1B-42F6-9EF9-3F8AE9B48AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D9E7D9-BF1B-42F6-9EF9-3F8AE9B48AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D9E7D9-BF1B-42F6-9EF9-3F8AE9B48AED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6800B260-D7FC-4BE1-AE7F-CDF9EEABE187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6800B260-D7FC-4BE1-AE7F-CDF9EEABE187}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6800B260-D7FC-4BE1-AE7F-CDF9EEABE187}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6800B260-D7FC-4BE1-AE7F-CDF9EEABE187}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45AD24FC-2793-4519-AD94-4F15B57D2996}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45AD24FC-2793-4519-AD94-4F15B57D2996}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45AD24FC-2793-4519-AD94-4F15B57D2996}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45AD24FC-2793-4519-AD94-4F15B57D2996}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{6800B260-D7FC-4BE1-AE7F-CDF9EEABE187} = {6E3B27E8-B00E-4DFB-8E2E-2CAB2F2ECAAC}
-		{45AD24FC-2793-4519-AD94-4F15B57D2996} = {6E3B27E8-B00E-4DFB-8E2E-2CAB2F2ECAAC}
 	EndGlobalSection
 EndGlobal
