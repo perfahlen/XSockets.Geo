@@ -1,6 +1,0 @@
-C:\Users\pfahlen\Documents\XSockets.Geo\XSockets.Geo.WebTestClient\bin\XSockets.Geo.WebTestClient.dll.config
-C:\Users\pfahlen\Documents\XSockets.Geo\XSockets.Geo.WebTestClient\bin\XSockets.Geo.WebTestClient.dll
-C:\Users\pfahlen\Documents\XSockets.Geo\XSockets.Geo.WebTestClient\bin\XSockets.Geo.WebTestClient.pdb
-C:\Users\pfahlen\Documents\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Release\XSockets.Geo.WebTestClient.csprojResolveAssemblyReference.cache
-C:\Users\pfahlen\Documents\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Release\XSockets.Geo.WebTestClient.dll
-C:\Users\pfahlen\Documents\XSockets.Geo\XSockets.Geo.WebTestClient\obj\Release\XSockets.Geo.WebTestClient.pdb

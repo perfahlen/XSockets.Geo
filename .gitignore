@@ -1,0 +1,12 @@
+XSockets.Geo.WebClient/obj/
+GeoFenceWorkerRole/bin/
+GeoFenceWorkerRole/obj/Debug/GeoFenceWorkerRole.csproj.FileListAbsolute.txt
+GeoFenceWorkerRole/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+GeoFenceWorkerRole/obj/
+GeoFenceWorkerRole/xsockets.license.x
+GeoFenceWorker/bin/
+GeoFenceWorker/obj/
+GeoFenceWorker/csx/
+XSockets.GeoWorker/obj/
+XSockets.Geo.WebClient/bin/
+GeoFenceWorker/Profiles/xsocketsgeofenceProduction.azurePubxml
