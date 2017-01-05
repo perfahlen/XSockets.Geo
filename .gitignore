@@ -10,3 +10,4 @@ GeoFenceWorker/csx/
 XSockets.GeoWorker/obj/
 XSockets.Geo.WebClient/bin/
 GeoFenceWorker/Profiles/xsocketsgeofenceProduction.azurePubxml
+XSockets.GeoWorker/xsockets.license.x
